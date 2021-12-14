@@ -1,5 +1,10 @@
 # Changelog
 
+## vNext
+
+### Chores
+- Integrated Chromatic for visual regression testing ([PR 2776](https://github.com/input-output-hk/daedalus/pull/2776))
+
 ## 4.6.0
 
 ### Features
