@@ -8,7 +8,12 @@ import type {
 } from '../types/sidebarTypes';
 import type Wallet from '../domains/Wallet';
 
-type IndexedWallet = { wallet: Wallet, index: number, amount: number };
+type IndexedWallet = {
+  wallet: Wallet,
+  index: number,
+  amount: number,
+  name: string,
+};
 
 type SortWalletsProps = {
   wallets: Wallet[],
@@ -24,6 +29,7 @@ export function sortWallets({
       wallet: w,
       index,
       amount: w.amount.toNumber(),
+      name: w.name.toLowerCase(),
     })
   );
 
@@ -39,9 +45,9 @@ export function sortWallets({
     case WalletSortBy.Date:
       return doOrderBy(['index']);
     case WalletSortBy.Balance:
-      return doOrderBy(['amount', 'wallet.name', 'index']);
+      return doOrderBy(['amount', 'name', 'index']);
     case WalletSortBy.Name:
-      return doOrderBy(['wallet.name', 'amount', 'index']);
+      return doOrderBy(['name', 'amount', 'index']);
     case WalletSortBy.None:
     default:
       return wallets;

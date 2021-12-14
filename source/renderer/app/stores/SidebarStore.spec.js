@@ -91,12 +91,22 @@ describe('Sidebar Store', () => {
     [
       WalletSortBy.Name,
       [
-        ['2', 'Wallet B', 2],
-        ['1', 'Wallet A', 1],
+        ['1', 'Sigurd', 1600],
+        ['2', 'Hel', 25],
+        ['3', 'Loki', 0],
+        ['4', 'empty', 0],
+        ['5', 'empty', 0],
+        ['6', 'Odin', 246, true],
+        ['7', 'Jormungand', 0, true],
       ],
       [
-        ['1', 'Wallet A', 1],
-        ['2', 'Wallet B', 2],
+        ['4', 'empty', 0],
+        ['5', 'empty', 0],
+        ['2', 'Hel', 25],
+        ['3', 'Loki', 0],
+        ['1', 'Sigurd', 1600],
+        ['7', 'Jormungand', 0, true],
+        ['6', 'Odin', 246, true],
       ],
     ],
     // Sort wallets by BALANCE from from higher to lower as default order
@@ -114,7 +124,7 @@ describe('Sidebar Store', () => {
   ];
 
   test.each(defaultSortingCases)(
-    `should set default sorting for %s on %s order`,
+    `should set default sorting for %s`,
     (sortBy, wallets, expected) => {
       const sidebarStore = setupStore({
         wallets: wallets.map(([id, name, amount, isLegacy = false]) => ({
