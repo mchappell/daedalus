@@ -1,5 +1,11 @@
 # Changelog
 
+## vNext
+
+### Features
+
+- Improved wallet send form ([PR 2791](https://github.com/input-output-hk/daedalus/pull/2791))
+
 ## 4.6.0
 
 ### Features
