@@ -222,7 +222,7 @@ function change_webpack_configuration() {
 
 function update_eslintrc() {
     sed -i "s/flowtype/@typescript-eslint/g" ./.eslintrc
-    sed -i "s/babel-eslint/@typescript-eslint\/parser/" ./.eslintrc
+    sed -i "s/\@babel\/eslint-parser/@typescript-eslint\/parser/" ./.eslintrc
     # These are the additional rules we need to prevent lint stage failing, update rules to use warn flag, so we don't forget about them
     sed -i "74i\    \"react/jsx-first-prop-new-line\": [1, \"multiline-multiprop\"],\n    \"@typescript-eslint/ban-ts-comment\": 1,\n    \"@typescript-eslint/no-empty-function\": 1,\n    \"@typescript-eslint/ban-types\": 1,\n    \"import/no-unresolved\": 1,\n    \"@typescript-eslint/no-var-requires\": 1,\n    \"camelcase\": 1,\n\t\t\"no-empty\": 1,\n    \"@typescript-eslint/no-explicit-any\": 1,\n    \"no-shadow\": 1,\n    \"react/no-did-update-set-state\": 1," ./.eslintrc
     sed -i "/import\/resolver/d" ./.eslintrc
